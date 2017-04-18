@@ -1,0 +1,645 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/jamescun/node-proc#readme"
+
+    >node-proc (v0.0.1)</a>
+</h1>
+<h4>Module to access Linux /proc information</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-proc">module node-proc</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-proc.cpuinfo">
+            function <span class="apidocSignatureSpan">node-proc.</span>cpuinfo
+            <span class="apidocSignatureSpan">( callback )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-proc.meminfo">
+            function <span class="apidocSignatureSpan">node-proc.</span>meminfo
+            <span class="apidocSignatureSpan">( callback )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-proc.netdev">
+            function <span class="apidocSignatureSpan">node-proc.</span>netdev
+            <span class="apidocSignatureSpan">( callback )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-proc.read">
+            function <span class="apidocSignatureSpan">node-proc.</span>read
+            <span class="apidocSignatureSpan">( filename, callback )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-proc.uptime">
+            function <span class="apidocSignatureSpan">node-proc.</span>uptime
+            <span class="apidocSignatureSpan">( callback )</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-proc.cpuinfo">module node-proc.cpuinfo</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-proc.cpuinfo.cpuinfo">
+            function <span class="apidocSignatureSpan">node-proc.</span>cpuinfo
+            <span class="apidocSignatureSpan">( callback )</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-proc.meminfo">module node-proc.meminfo</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-proc.meminfo.meminfo">
+            function <span class="apidocSignatureSpan">node-proc.</span>meminfo
+            <span class="apidocSignatureSpan">( callback )</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-proc.netdev">module node-proc.netdev</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-proc.netdev.netdev">
+            function <span class="apidocSignatureSpan">node-proc.</span>netdev
+            <span class="apidocSignatureSpan">( callback )</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-proc.read">module node-proc.read</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-proc.read.read">
+            function <span class="apidocSignatureSpan">node-proc.</span>read
+            <span class="apidocSignatureSpan">( filename, callback )</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-proc.uptime">module node-proc.uptime</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-proc.uptime.uptime">
+            function <span class="apidocSignatureSpan">node-proc.</span>uptime
+            <span class="apidocSignatureSpan">( callback )</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-proc" id="apidoc.module.node-proc">module node-proc</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-proc.cpuinfo" id="apidoc.element.node-proc.cpuinfo">
+        function <span class="apidocSignatureSpan">node-proc.</span>cpuinfo
+        <span class="apidocSignatureSpan">( callback )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">cpuinfo = function ( callback )
+	{
+		readProcFile( &#x27;cpuinfo&#x27;, function( err, cpuinfo )
+		{
+			if ( err ) return callback( err );
+
+			// Split Multiple Processors
+			var procs = cpuinfo.split(&#x22;\n\n&#x22;);
+
+			var r = [];
+
+			// Format Each Processor
+			for( p in procs )
+			{
+				if ( procs[p].length &#x3c; 1 ) continue;
+
+				// Parse and append to response
+				r.push( readKeyValue( procs[p] ) );
+			}
+
+			return callback( null, r );
+		});
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+
+
+### CPU Info
+
+System Processor(s) Information
+
+proc.<span class="apidocCodeKeywordSpan">cpuinfo</span>( callback )
+
+callback( err, array cpuinfo )
+
+**Example**
+
+[ { processor: &#x27;0&#x27;,
+    vendor_id: &#x27;GenuineIntel&#x27;,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-proc.meminfo" id="apidoc.element.node-proc.meminfo">
+        function <span class="apidocSignatureSpan">node-proc.</span>meminfo
+        <span class="apidocSignatureSpan">( callback )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">meminfo = function ( callback )
+	{
+		readProcFile( &#x27;meminfo&#x27;, function( err, meminfo )
+		{
+			if ( err ) return callback( err );
+
+			meminfo = readKeyValue( meminfo );
+
+			return callback( null, meminfo );
+		});
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Usage
+-----
+
+### Memory Info
+
+System Memory Usage in Bytes
+
+proc.<span class="apidocCodeKeywordSpan">meminfo</span>( callback )
+
+callback( err, array meminfo )
+
+**Example**
+
+{ MemTotal: 383238144,
+  MemFree: 38522880,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-proc.netdev" id="apidoc.element.node-proc.netdev">
+        function <span class="apidocSignatureSpan">node-proc.</span>netdev
+        <span class="apidocSignatureSpan">( callback )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">netdev = function ( callback )
+	{
+		readProcFile( &#x27;net/dev&#x27;, function( err, netdev )
+		{
+			if ( err ) return callback( err );
+
+			netdev = netdev.trim().split( &#x22;\n&#x22; );
+
+			// Remove Headers
+			netdev.shift(); netdev.shift();
+
+			var r = [];
+
+			for( dev in netdev )
+			{
+				// Split Line by whitespace
+				line = netdev[dev].trim().match( /\S+/g );
+
+				// Append To Response
+				r.push({
+					device: line[0].substr( 0, line[0].length - 1 ),
+					Rx: {
+						bytes: line[1],
+						packets: line[2]
+					},
+					Tx: {
+						bytes: line[9],
+						packets: line[10]
+					}
+				});
+			}
+
+			return callback( null, r );
+		});
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Note: `uptime` is the seconds since system boot, and `startTime` is the unix timestamp of system boot.
+
+
+### Network Devices Transfer
+
+Bytes and packets transferred by system network devices
+
+proc.<span class="apidocCodeKeywordSpan">netdev</span>( callback )
+
+callback( err, array netdev )
+
+**Example**
+
+[ { device: &#x27;lo&#x27;,
+    Rx: { bytes: &#x27;0&#x27;, packets: &#x27;0&#x27; },
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-proc.read" id="apidoc.element.node-proc.read">
+        function <span class="apidocSignatureSpan">node-proc.</span>read
+        <span class="apidocSignatureSpan">( filename, callback )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function readProcFile( filename, callback )
+	{
+		FS.readFile( &#x27;/proc/&#x27;+filename, function( err, filedata )
+		{
+			if ( err ) return callback( err );
+
+			return callback( null, filedata.toString() );
+		});
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-proc.uptime" id="apidoc.element.node-proc.uptime">
+        function <span class="apidocSignatureSpan">node-proc.</span>uptime
+        <span class="apidocSignatureSpan">( callback )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">uptime = function ( callback )
+	{
+		readProcFile( &#x27;uptime&#x27;, function( err, uptime )
+		{
+			if ( err ) return callback( err );
+
+			uptime = uptime.split( &#x27; &#x27; );
+			uptime = parseInt( uptime[0].split(&#x27;.&#x27;)[0] );
+
+			var startTime = Math.floor(new Date().getTime() / 1000) - uptime;
+
+			return callback( null, uptime, startTime );
+		});
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    ]
+
+
+### System Uptime
+
+System Uptime
+
+    proc.<span class="apidocCodeKeywordSpan">uptime</span>( callback )
+
+    callback( err, integer uptime, integer startTime )
+
+Note: `uptime` is the seconds since system boot, and `startTime` is the unix timestamp of system boot.
+
+
+### Network Devices Transfer
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-proc.cpuinfo" id="apidoc.module.node-proc.cpuinfo">module node-proc.cpuinfo</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-proc.cpuinfo.cpuinfo" id="apidoc.element.node-proc.cpuinfo.cpuinfo">
+        function <span class="apidocSignatureSpan">node-proc.</span>cpuinfo
+        <span class="apidocSignatureSpan">( callback )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">cpuinfo = function ( callback )
+	{
+		readProcFile( &#x27;cpuinfo&#x27;, function( err, cpuinfo )
+		{
+			if ( err ) return callback( err );
+
+			// Split Multiple Processors
+			var procs = cpuinfo.split(&#x22;\n\n&#x22;);
+
+			var r = [];
+
+			// Format Each Processor
+			for( p in procs )
+			{
+				if ( procs[p].length &#x3c; 1 ) continue;
+
+				// Parse and append to response
+				r.push( readKeyValue( procs[p] ) );
+			}
+
+			return callback( null, r );
+		});
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+
+
+### CPU Info
+
+System Processor(s) Information
+
+proc.<span class="apidocCodeKeywordSpan">cpuinfo</span>( callback )
+
+callback( err, array cpuinfo )
+
+**Example**
+
+[ { processor: &#x27;0&#x27;,
+    vendor_id: &#x27;GenuineIntel&#x27;,
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-proc.meminfo" id="apidoc.module.node-proc.meminfo">module node-proc.meminfo</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-proc.meminfo.meminfo" id="apidoc.element.node-proc.meminfo.meminfo">
+        function <span class="apidocSignatureSpan">node-proc.</span>meminfo
+        <span class="apidocSignatureSpan">( callback )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">meminfo = function ( callback )
+	{
+		readProcFile( &#x27;meminfo&#x27;, function( err, meminfo )
+		{
+			if ( err ) return callback( err );
+
+			meminfo = readKeyValue( meminfo );
+
+			return callback( null, meminfo );
+		});
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Usage
+-----
+
+### Memory Info
+
+System Memory Usage in Bytes
+
+proc.<span class="apidocCodeKeywordSpan">meminfo</span>( callback )
+
+callback( err, array meminfo )
+
+**Example**
+
+{ MemTotal: 383238144,
+  MemFree: 38522880,
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-proc.netdev" id="apidoc.module.node-proc.netdev">module node-proc.netdev</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-proc.netdev.netdev" id="apidoc.element.node-proc.netdev.netdev">
+        function <span class="apidocSignatureSpan">node-proc.</span>netdev
+        <span class="apidocSignatureSpan">( callback )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">netdev = function ( callback )
+	{
+		readProcFile( &#x27;net/dev&#x27;, function( err, netdev )
+		{
+			if ( err ) return callback( err );
+
+			netdev = netdev.trim().split( &#x22;\n&#x22; );
+
+			// Remove Headers
+			netdev.shift(); netdev.shift();
+
+			var r = [];
+
+			for( dev in netdev )
+			{
+				// Split Line by whitespace
+				line = netdev[dev].trim().match( /\S+/g );
+
+				// Append To Response
+				r.push({
+					device: line[0].substr( 0, line[0].length - 1 ),
+					Rx: {
+						bytes: line[1],
+						packets: line[2]
+					},
+					Tx: {
+						bytes: line[9],
+						packets: line[10]
+					}
+				});
+			}
+
+			return callback( null, r );
+		});
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Note: `uptime` is the seconds since system boot, and `startTime` is the unix timestamp of system boot.
+
+
+### Network Devices Transfer
+
+Bytes and packets transferred by system network devices
+
+proc.<span class="apidocCodeKeywordSpan">netdev</span>( callback )
+
+callback( err, array netdev )
+
+**Example**
+
+[ { device: &#x27;lo&#x27;,
+    Rx: { bytes: &#x27;0&#x27;, packets: &#x27;0&#x27; },
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-proc.read" id="apidoc.module.node-proc.read">module node-proc.read</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-proc.read.read" id="apidoc.element.node-proc.read.read">
+        function <span class="apidocSignatureSpan">node-proc.</span>read
+        <span class="apidocSignatureSpan">( filename, callback )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function readProcFile( filename, callback )
+	{
+		FS.readFile( &#x27;/proc/&#x27;+filename, function( err, filedata )
+		{
+			if ( err ) return callback( err );
+
+			return callback( null, filedata.toString() );
+		});
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-proc.uptime" id="apidoc.module.node-proc.uptime">module node-proc.uptime</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-proc.uptime.uptime" id="apidoc.element.node-proc.uptime.uptime">
+        function <span class="apidocSignatureSpan">node-proc.</span>uptime
+        <span class="apidocSignatureSpan">( callback )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">uptime = function ( callback )
+	{
+		readProcFile( &#x27;uptime&#x27;, function( err, uptime )
+		{
+			if ( err ) return callback( err );
+
+			uptime = uptime.split( &#x27; &#x27; );
+			uptime = parseInt( uptime[0].split(&#x27;.&#x27;)[0] );
+
+			var startTime = Math.floor(new Date().getTime() / 1000) - uptime;
+
+			return callback( null, uptime, startTime );
+		});
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    ]
+
+
+### System Uptime
+
+System Uptime
+
+    proc.<span class="apidocCodeKeywordSpan">uptime</span>( callback )
+
+    callback( err, integer uptime, integer startTime )
+
+Note: `uptime` is the seconds since system boot, and `startTime` is the unix timestamp of system boot.
+
+
+### Network Devices Transfer
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
