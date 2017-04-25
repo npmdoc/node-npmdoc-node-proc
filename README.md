@@ -1,4 +1,7 @@
-# api documentation for  [node-proc (v0.0.1)](https://github.com/jamescun/node-proc#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-node-proc.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-node-proc) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-node-proc.svg)](https://travis-ci.org/npmdoc/node-npmdoc-node-proc)
+# npmdoc-node-proc
+
+#### basic api documentation for  [node-proc (v0.0.1)](https://github.com/jamescun/node-proc#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-node-proc.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-node-proc) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-node-proc.svg)](https://travis-ci.org/npmdoc/node-npmdoc-node-proc)
+
 #### Module to access Linux /proc information
 
 [![NPM](https://nodei.co/npm/node-proc.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/node-proc)
@@ -52,7 +55,8 @@
         "type": "git",
         "url": "git://github.com/jamescun/node-proc.git"
     },
-    "version": "0.0.1"
+    "version": "0.0.1",
+    "bin": {}
 }
 ```
 
